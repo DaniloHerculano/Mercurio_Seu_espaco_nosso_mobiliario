@@ -62,7 +62,6 @@
 <!--==============================conteúdo=================================-->
 			<div class="content"><div class="ic"></div>
 				<div class="container_12">
-					<div class="clear"></div>
 					<p></p>
 						<h5>Precisa de mesas e cadeiras para seu evento? 
 							<br>Faça já o seu pedido:</h5>
@@ -73,22 +72,21 @@
 					<p></p>
 					<h6>Escolha o modelo:</h6>
                 <br>
+                <input type="RADIO" name="opção" id="conforto" value="1" onclick="change1()">CONFORTO
+                <br><input type="RADIO" name="opção" id="medio" value="2" onclick="change2()">MÉDIO
+                <br><input type="RADIO" name="opção" id="executivo" value="3" onclick="change3()">EXECUTIVO
+				<p></p>
 				<span id="change" style="color:white;">.</span>
-				<br>
-                <input type="RADIO" name="opção" id="conforto" value="op1" onclick="change1()">CONFORTO
-                <br><input type="RADIO" name="opção" id="medio" value="op2" onclick="change2()">MÉDIO
-                <br><input type="RADIO" name="opção" id="executivo" value="op3" onclick="change3()">EXECUTIVO
-
                 <!-- #second_step -->
 				 <p></p>
-                <h6>Escolha a quantidade de mesas:</h6>
-                <input type="number" id="quantidademesas" name="quantidademesas" min="0" max="50"> R$<span id="resmesas">--</span>
+				 <h6>Escolha a quantidade de bancos:</h6>
+                <input type="number" id="quantidadebancos" name="quantidadebancos" min="0" max="50"> R$<span id="resbancos">--</span>
                 <p></p>
                 <h6>Escolha a quantidade de cadeiras:</h6>
                 <input type="number" id="quantidadecadeiras" name="quantidadecadeiras" min="0" max="200"> R$<span id="rescadeiras">--</span>
                 <p></p>
-                <h6>Escolha a quantidade de bancos:</h6>
-                <input type="number" id="quantidadebancos" name="quantidadebancos" min="0" max="50"> R$<span id="resbancos">--</span>
+                <h6>Escolha a quantidade de mesas:</h6>
+                <input type="number" id="quantidademesas" name="quantidademesas" min="0" max="50"> R$<span id="resmesas">--</span>
                 <p></p>
 				<b>VALOR TOTAL R$ <span id="totalpedido">--</span></b>
 				<p></p>
@@ -97,26 +95,26 @@
 				<button type="submit" id="prox">Finalizar Pedido</button>
 					<div class="clear"></div>
 				</div>
-			</div>
+			</div></div>
 <!--==============================rodapé=================================-->
-		<footer>
-			<div class="container_12">
-				<div class="grid_12">
-					<div class="f_phone"><span>Ligue para nós:</span> 19 99999-5555</div>
-					<div class="socials">
-						<a href="https://api.whatsapp.com/" class="fa fa-whatsapp"></a>
-                        <a href="https://www.facebook.com/danilovalentim" class="fa fa-facebook"></a>
-						<a href="https://twitter.com/" class="fa fa-twitter"></a>
-					</div>
-					<div class="copy">
-						<div class="st1">
-						<div class="brand">M</span>ERCÚRIO </div>
-						&copy; 2024	| <a href="#">Política de Privacidade</a> 
-					</div> <a href="group-members.html">Site desenvolvido por DRP04-PJI240-SALA-005GRUPO-006 - PROJETO INTEGRADOR II - UNIVESP</a>
-					</div>
-				</div>
-				<div class="clear"></div>
+<footer>
+	<div class="container_12">
+		<div class="grid_12">
+			<div class="f_phone"><span>Ligue para nós:</span> 19 99999-5555</div>
+			<div class="socials">
+				<a href="https://api.whatsapp.com/" class="fa fa-whatsapp"></a>
+				<a href="https://www.facebook.com/danilovalentim" class="fa fa-facebook"></a>
+				<a href="https://twitter.com/" class="fa fa-twitter"></a>
 			</div>
-		</footer>
-	</body>
+			<div class="copy">
+				<div class="st1">
+				<div class="brand">M</span>ERCÚRIO </div>
+				&copy; 2024	| <a href="#">Política de Privacidade</a> 
+			</div> <a href="group-members.html">Site desenvolvido por DRP04-PJI240-SALA-005GRUPO-006 - PROJETO INTEGRADOR II - UNIVESP</a>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</footer>
+</body>
 </html>
