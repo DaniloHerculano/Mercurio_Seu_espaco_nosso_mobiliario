@@ -132,6 +132,77 @@ ul {
     margin-top: 19px;
 }
 
+/****Login****/
+
+<style>
+        
+        body {
+            background-color: white;
+        }
+
+        /*balão de login*/
+        .form-bubble {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 400px;
+            margin: 50px auto;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-bubble h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        
+        .btn {
+            background-color: #0b6602; /* Cor verde usada no cabeçalho */
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #085902; 
+        }
+
+        .extra-options a {
+            display: block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .extra-options a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
 
 /****Links****/
 
