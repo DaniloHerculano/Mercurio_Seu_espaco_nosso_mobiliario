@@ -1,6 +1,6 @@
 const imgconforto = '<img src="images/img-encomendar/0101.jpg" width="150px"><img src="images/img-encomendar/0102.jpg" width="150px"><img src="images/img-encomendar/0103.jpg" width="150px">'
 const imgmedio =  '<img src="images/img-encomendar/0201.jpg" width="150px"><img src="images/img-encomendar/0202.jpg" width="150px"><img src="images/img-encomendar/0203.jpg" width="150px">'
-const imgexecutivo =  '<img src="images/img-encomendar/0301.jpg" width="150px"><img src="images/img-encomendar/0302.jpg" width="150px"><img src="images/img-encomendar/0303.jpg" width="150px">'
+const imgexecutivo = '<img src="images/img-encomendar/0301.jpg" width="150px"><img src="images/img-encomendar/0302.jpg" width="150px"><img src="images/img-encomendar/0303.jpg" width="150px">'
 
 var escolha = 0
 function change1() {
@@ -17,13 +17,13 @@ function change1() {
   }
 
 function valor() {
-    let quantidademesas =  document.getElementById('quantidademesas')
-    let quantidadecadeiras =  document.getElementById('quantidadecadeiras')
-    let quantidadebancos =  document.getElementById('quantidadebancos')
+    var quantidademesas =  document.getElementById('quantidademesas')
+    var quantidadecadeiras =  document.getElementById('quantidadecadeiras')
+    var quantidadebancos =  document.getElementById('quantidadebancos')
 
-    let valormesas = Number (quantidademesas.value)
-    let valorcadeiras = Number (quantidadecadeiras.value)
-    let valorbancos = Number (quantidadebancos.value)
+    var valormesas = Number (quantidademesas.value)
+    var valorcadeiras = Number (quantidadecadeiras.value)
+    var valorbancos = Number (quantidadebancos.value)
 
     finalmesas = valormesas * 8
     finalcadeiras = valorcadeiras * 4
@@ -67,3 +67,23 @@ function valor() {
   }
 }
 
+function frete() {
+
+var cep =  document.getElementById('cep')
+var numerocep = Number (cep.value)
+
+var changecep = document.getElementById('changecep')
+
+if (numerocep >= 13290000 && numerocep <= 13294728 || numerocep >= 13280000 && numerocep <= 13289756){
+ changecep.innerHTML = `Frete grátis`
+} else {
+  changecep.innerHTML = `Frete: R$ 50,00`  
+  var respedido1 = respedido1 + 50
+  var respedido2 = respedido2 + 50
+  var respedido = respedido + 50
+}
+}
+
+function fechamento(){
+  
+}

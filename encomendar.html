@@ -76,7 +76,7 @@
                 <br><input type="RADIO" name="opção" id="medio" value="2" onclick="change2()">MÉDIO
                 <br><input type="RADIO" name="opção" id="executivo" value="3" onclick="change3()">EXECUTIVO
 				<p></p>
-				<span id="change" style="color:white;">.</span>
+				<span id="change"></span>
                 <!-- #second_step -->
 				 <p></p>
 				 <h6>Escolha a quantidade de bancos:</h6>
@@ -92,7 +92,13 @@
 				<p></p>
                 <button type="submit" class="btn" id="btn" onclick="valor()">Calcular Total</button>
 				<p></p>
-				<button type="submit" class="btn" id="prox">Finalizar Pedido</button>
+				<input type="text" id="cep" maxlength="9" placeholder="Digite o CEP"><button type="submit" class="btn" id="enviocep" onclick="frete()">Calcular Frete</button>
+				<br>
+				<span id="changecep"></span>
+				<p></p>
+				<input type="text" name="endereco" id="endereco" placeholder="Digite sua rua e número">
+				<p></p>
+				<button type="submit" class="btn" id="prox" onclick="fechamento()">Finalizar Pedido</button>
 					<div class="clear"></div>
 				</div>
 			</div></div>
