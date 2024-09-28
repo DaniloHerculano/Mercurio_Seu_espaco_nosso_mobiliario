@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<title>Produtos</title>
+		<meta charset="utf-8">
+		<meta name = "format-detection" content = "telephone=no" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="icon" href="images/favicon.ico">
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-migrate-1.2.1.js"></script>
+		<script src="js/script.js"></script>
+		<script src="js/superfish.js"></script>
+		<script src="js/jquery.ui.totop.js"></script>
+		<script src="js/jquery.equalheights.js"></script>
+		<script src="js/jquery.mobilemenu.js"></script>
+		<script src="js/jquery.easing.1.3.js"></script>
+		<script src="js/script1.js"></script>
+		<script src="js/scriptmodal.js" defer></script>
+		<script>
+			$(document).ready(function(){
+				$().UItoTop({ easingType: 'easeOutQuart' });
+			});
+		</script>
+	</head>
+	<body class="" id="top">
+		<div class="main">
+<!--==============================cabeçalho=================================-->
+<header>
+	<div class="menu_block ">
+		<div class="container_12">
+			<div class="grid_12">
+				<nav class="horizontal-nav full-width horizontalNav-notprocessed">
+					<ul class="sf-menu">
+						<li><a href="index.html">Início</a></li>
+						<li class="current"><a href="index-1.html">Sobre</a></li>
+						<li><a href="login.html">Área do Cliente</a></li>
+						<li><a href="index-2.html">Produtos</a></li>
+						<li><a href="index-3.html">Serviços</a></li>
+						<li><a href="index-4.html">Contatos</a></li>
+					</ul>
+				</nav>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="container_12">
+		<div class="grid_12">
+			<h1>
+				<p style="font-size:70px" font face="Serif"><span class="color1"></span>MERCÚRIO</span></strong></p>
+				<p style="font-size:70px" font face="Serif"><span class="fakedivision">_</span></span></strong></p>
+				<p style="font-size:50px" font face="Serif"><span class="color0">Seu Espaço, Nosso Mobiliário</span></strong></p>
+			</h1>
+		</div>
+	</div>
+	<div class="clear"></div>
+</header>
+<!--==============================conteúdo=================================-->
+			<div class="content"><div class="ic"></div>
+				<div class="container_12">
+					<p></p>
+						<h5>Precisa de mesas e cadeiras para seu evento? 
+							<br>Faça já o seu pedido:</h5>
+
+					<h6>Para qual data você vai precisar?</h6>
+					<input type="date" id="datepicker">
+					<p></p>
+					<h6>Escolha o modelo:</h6>
+                <br>
+                <input type="RADIO" name="opção" id="conforto" value="1" onclick="change1()">CONFORTO
+                <br><input type="RADIO" name="opção" id="medio" value="2" onclick="change2()">MÉDIO
+                <br><input type="RADIO" name="opção" id="executivo" value="3" onclick="change3()">EXECUTIVO
+				<p></p>
+				<span id="change"></span>
+				 <p></p>
+				 <h6>Escolha a quantidade de bancos:</h6>
+                <input type="number" id="quantidadebancos" name="quantidadebancos" min="0" max="50"> R$<span id="resbancos">--</span>
+                <p></p>
+                <h6>Escolha a quantidade de cadeiras:</h6>
+                <input type="number" id="quantidadecadeiras" name="quantidadecadeiras" min="0" max="200"> R$<span id="rescadeiras">--</span>
+                <p></p>
+                <h6>Escolha a quantidade de mesas:</h6>
+                <input type="number" id="quantidademesas" name="quantidademesas" min="0" max="50"> R$<span id="resmesas">--</span>
+                <p></p>
+				<b>VALOR TOTAL R$ <span id="totalpedido"></span></b>
+				<p></p>
+                <button type="submit" class="btn3" id="btn3" onclick="valor()">Calcular Total</button>
+				<p></p>
+				<input type="text" id="cep" maxlength="9" placeholder="Digite o CEP"><button type="submit" class="btn3" id="enviocep" onclick="frete()">Calcular Frete</button>
+				<br>
+				Frete R$: <span id="changecep"></span>
+				<p></p>
+				<input type="text" name="endereco" id="endereco" placeholder="Digite sua rua e número">
+				<p></p>
+				<button id="open-modal" class="btn2" onclick="fim()">Finalizar Pedido</button>
+				<div id="fade"></div>
+				<div id="modal">
+					<div class="modal-header" id="titulo">
+						<h5>Pedidos</h5>
+						<button id="close-modal" class="btn2">Fechar</button>
+					</div>
+					<div class="modal-body" id="corpo">
+						Preencha todas as informações para que seu pedido seja concluído. 
+						<br>Em caso de dúvdas entre em contato pelo Whatsapp.</div>
+				</div>
+					<div class="clear"></div>
+					
+				</div>
+			</div></div>
+<!--==============================rodapé=================================-->
+<footer>
+	<div class="container_12">
+		<div class="grid_12">
+			<div class="f_phone"><span>Ligue para nós:</span> 19 99999-5555</div>
+			<div class="socials">
+				<a href="https://api.whatsapp.com/" class="fa fa-whatsapp"></a>
+				<a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+				<a href="https://twitter.com/" class="fa fa-twitter"></a>
+			</div>
+			<div class="copy">
+				<div class="st1">
+				<div class="brand">M</span>ERCÚRIO </div>
+				&copy; 2024	| <a href="#">Política de Privacidade</a> 
+			</div> <a href="group-members.html">Site desenvolvido por DRP04-PJI240-SALA-005GRUPO-006 - PROJETO INTEGRADOR II - UNIVESP</a>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</footer>
+</body>
+</html>
