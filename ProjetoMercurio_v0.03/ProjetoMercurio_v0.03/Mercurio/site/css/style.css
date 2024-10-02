@@ -1123,4 +1123,41 @@ header h1 a {
     color: #160ab6;
     width: 280px;
   }
-  
+
+.container_13 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.text-section {
+    max-width: 800px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.image-section {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: nowrap;
+}
+
+.image-section a {
+    text-align: center;
+}
+
+.image-section img {
+    max-width: 500px;
+    height: auto;
+}
+
+.type_caption {
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
