@@ -1,85 +1,105 @@
-const imgconforto = '<img src="images/img-encomendar/0101.jpg" width="150px"><img src="images/img-encomendar/0102.jpg" width="150px"><img src="images/img-encomendar/0103.jpg" width="150px">'
-const imgmedio =  '<img src="images/img-encomendar/0201.jpg" width="150px"><img src="images/img-encomendar/0202.jpg" width="150px"><img src="images/img-encomendar/0203.jpg" width="150px">'
-const imgexecutivo = '<img src="images/img-encomendar/0301.jpg" width="150px"><img src="images/img-encomendar/0302.jpg" width="150px"><img src="images/img-encomendar/0303.jpg" width="150px">'
+const imgconforto = '<img src="images/img-encomendar/0101.jpg" width="150px"><img src="images/img-encomendar/0102.jpg" width="150px"><img src="images/img-encomendar/0103.jpg" width="150px">';
+const imgmedio = '<img src="images/img-encomendar/0201.jpg" width="150px"><img src="images/img-encomendar/0202.jpg" width="150px"><img src="images/img-encomendar/0203.jpg" width="150px">';
+const imgexecutivo = '<img src="images/img-encomendar/0301.jpg" width="150px"><img src="images/img-encomendar/0302.jpg" width="150px"><img src="images/img-encomendar/0303.jpg" width="150px">';
 
-let escolha = 0
+let escolha = 0;
+let totalFrete = 0;
+let totalPedido = 0;
+
 function change1() {
-    change.innerHTML = imgconforto
-    escolha = 1
-  }
-  function change2() {
-    change.innerHTML = imgmedio
-    escolha = 2
-  }
-  function change3() {
-    change.innerHTML = imgexecutivo
-    escolha = 3
-  }
+    change.innerHTML = imgconforto;
+    escolha = 1;
+}
+
+function change2() {
+    change.innerHTML = imgmedio;
+    escolha = 2;
+}
+
+function change3() {
+    change.innerHTML = imgexecutivo;
+    escolha = 3;
+}
 
 function valor() {
-    let quantidademesas =  document.getElementById('quantidademesas')
-    let quantidadecadeiras =  document.getElementById('quantidadecadeiras')
-    let quantidadebancos =  document.getElementById('quantidadebancos')
+    let quantidademesas = document.getElementById('quantidademesas');
+    let quantidadecadeiras = document.getElementById('quantidadecadeiras');
+    let quantidadebancos = document.getElementById('quantidadebancos');
 
-    let valormesas = Number (quantidademesas.value)
-    let valorcadeiras = Number (quantidadecadeiras.value)
-    let valorbancos = Number (quantidadebancos.value)
+    let valormesas = Number(quantidademesas.value);
+    let valorcadeiras = Number(quantidadecadeiras.value);
+    let valorbancos = Number(quantidadebancos.value);
 
-    finalmesas = valormesas * 8
-    finalcadeiras = valorcadeiras * 4
-    finalbancos = valorbancos *3
-    respedido = finalbancos + finalcadeiras + finalmesas
+    let finalmesas, finalcadeiras, finalbancos;
 
-    finalmesas1 = valormesas * 9
-    finalcadeiras1 = valorcadeiras * 5
-    finalbancos1 = valorbancos *4
-    respedido1 = finalbancos1 + finalcadeiras1 + finalmesas1
+    if (escolha === 1) {
+        finalmesas = valormesas * 8;
+        finalcadeiras = valorcadeiras * 4;
+        finalbancos = valorbancos * 3;
+        totalPedido = finalmesas + finalcadeiras + finalbancos;
+    } else if (escolha === 2) {
+        finalmesas = valormesas * 9;
+        finalcadeiras = valorcadeiras * 5;
+        finalbancos = valorbancos * 4;
+        totalPedido = finalmesas + finalcadeiras + finalbancos;
+    } else if (escolha === 3) {
+        finalmesas = valormesas * 10;
+        finalcadeiras = valorcadeiras * 6;
+        finalbancos = valorbancos * 5;
+        totalPedido = finalmesas + finalcadeiras + finalbancos;
+    } else {
+        resmesas.innerHTML = `Selecione um produto`;
+        rescadeiras.innerHTML = `Selecione um produto`;
+        resbancos.innerHTML = `Selecione um produto`;
+        totalPedido = 0;
+    }
 
-    finalmesas2 = valormesas * 10
-    finalcadeiras2 = valorcadeiras * 6
-    finalbancos2 = valorbancos *5
-    respedido2 = finalbancos2 + finalcadeiras2 + finalmesas2
-
-
-  if (escolha == 1){
-      resmesas.innerHTML = finalmesas
-      rescadeiras.innerHTML = finalcadeiras
-      resbancos.innerHTML = finalbancos
-      totalpedido.innerHTML = respedido
-  }
-  else if (escolha == 2){
-    resmesas.innerHTML = finalmesas1
-    rescadeiras.innerHTML = finalcadeiras1
-    resbancos.innerHTML = finalbancos1
-    totalpedido.innerHTML = respedido1
-
-  } else if (escolha == 3){
-    resmesas.innerHTML = finalmesas2
-      rescadeiras.innerHTML = finalcadeiras2
-      resbancos.innerHTML = finalbancos2
-      totalpedido.innerHTML = respedido2
-
-  } 
-  else {
-      resmesas.innerHTML = `Selecione um produto`
-      rescadeiras.innerHTML = `Selecione um produto`
-      resbancos.innerHTML = `Selecione um produto`
-  }
+    resmesas.innerHTML = finalmesas;
+    rescadeiras.innerHTML = finalcadeiras;
+    resbancos.innerHTML = finalbancos;
+    totalpedido.innerHTML = totalPedido + totalFrete;
 }
 
 function frete() {
+    let cep = document.getElementById('cep').value;
+    let changecep = document.getElementById('changecep');
 
-let cep =  document.getElementById('cep')
-let numerocep = Number (cep.value)
+    if ((cep >= "13290000" && cep <= "13294728") || (cep >= "13280000" && cep <= "13289756")) {
+        totalFrete = 0;
+    } else {
+        totalFrete = 50;
+    }
 
-let changecep = document.getElementById('changecep')
-
-if (numerocep >= 13290000 && numerocep <= 13294728 || numerocep >= 13280000 && numerocep <= 13289756){
- changecep.innerHTML = `0`
-} else {
-  changecep.innerHTML = `50`  
-  let respedido1 = respedido1 + 50
-  let respedido2 = respedido2 + 50
-  let respedido = respedido + 50
+    changecep.innerHTML = totalFrete;
+    totalpedido.innerHTML = totalPedido + totalFrete;
 }
+
+function finalizarPedido() {
+    const data = document.getElementById('datepicker').value;
+    const bancos = document.getElementById('quantidadebancos').value;
+    const cadeiras = document.getElementById('quantidadecadeiras').value;
+    const mesas = document.getElementById('quantidademesas').value;
+
+    if (!data || !escolha || !bancos || !cadeiras || !mesas) {
+        alert("Por favor, preencha todos os campos antes de finalizar o pedido.");
+        return;
+    }
+
+    const tipo = escolha === 1 ? "Conforto" : escolha === 2 ? "Médio" : "Executivo";
+    const pedido = {
+        data: data,
+        tipo: tipo,
+        bancos: bancos,
+        cadeiras: cadeiras,
+        mesas: mesas,
+        frete: totalFrete,
+        total: totalPedido + totalFrete,
+    };
+
+    let pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+    pedidos.push(pedido);
+    localStorage.setItem('pedidos', JSON.stringify(pedidos));
+
+    alert("Pedido finalizado com sucesso!");
+    window.location.href = "customer_area.html";
 }
