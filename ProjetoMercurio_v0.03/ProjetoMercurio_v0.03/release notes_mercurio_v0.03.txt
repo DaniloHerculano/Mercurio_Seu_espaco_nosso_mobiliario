@@ -42,6 +42,7 @@ Relator: Danilo Herculano
 - **encomendar.html**: Ajustes no layout e integração com o fluxo de login/registro.
 - **login.html**: Implementação do sistema de login com validação de credenciais e redirecionamento para a área do cliente.
 - **register.html**: Configuração do processo de cadastro, incluindo a gravação dos dados do usuário no Local Storage em formato JSON.
+- **customer_area.html**: Criada a área do cliente, onde o usuário agora pode visualizar seu histórico de aluguéis, prosseguir para alugar novos itens e realizar logout de forma simplificada.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Data: 20241101
