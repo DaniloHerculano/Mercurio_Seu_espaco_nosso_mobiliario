@@ -1,7 +1,4 @@
-
-
 Data: 20240905
-Versão: Mercurio 0.03
 Relator: Danilo Herculano
 
 ### **Entregas na Versão:**
@@ -17,20 +14,41 @@ Relator: Danilo Herculano
 - **Registro de Usuário**: Processo de registro de novos usuários iniciado.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Data: 20241101
+Relator: Danilo Herculano
 
-### **Pendências:**
+**Data: 2024-10-30**
+- **Login**: Implementado o sistema de login do usuário após o registro, com mensagens de erro para casos em que o usuário não existe ou a senha está incorreta.
+- **Processo Completo**: Realizado o fluxo de criação de conta, login e processo de aluguel.
+- **JSON**: O objeto `userData` é salvo no Local Storage em formato JSON.
+- **Cadastro (`register.html`)**: Durante o cadastro, os dados do usuário são salvos no Local Storage como um objeto JSON.
+- **Login (`login.html`)**: O script valida o `userData` recuperando-o do Local Storage e comparando com os valores inseridos no formulário. Ao encontrar correspondência entre email e senha, o usuário é redirecionado para `customer_area.html`.
+- **Redirecionamento e Controle de Sessão**: O usuário pode fazer login e logout repetidamente, com todos os dados persistindo no Local Storage como cache.
 
-#### **Desenvolvimento:**
-- Alterar cores da página, se necessário
-- Implementar a funcionalidade de login.
-- Desenvolver a funcionalidade "Esqueci minha senha".
-- Criar a tela de perfil do usuário logado.
-- Desenvolver a tela para seleção de produtos.
-- Implementar a tela do carrinho de compras.
-- Criar a tela de pagamento.
-- Implementar mensagem de erro quando mensagem em Contatos não é preenchida de forma adequada
-- Implementar botão de retorno ao início da página no final da página
+**Data: 2024-10-31**
+- **Botão de Logout**: Adicionado botão de logout na área do usuário logado.
+- **Estética da Interface**: Ajustadas as cores dos botões na área de usuário logado para melhor visibilidade e usabilidade.
+- **Modificação no `scriptmodal.js`**: Alterado o botão de fechar para redirecionar o usuário à Área do Cliente logado.
+- **Exibição de Aluguéis (`script1.js`)**: Na tela de usuário logado, implementada a exibição de todos os aluguéis feitos. *Nota*: No momento, exibe os aluguéis de todos os usuários registrados, o que precisa ser refinado para exibir somente os dados do usuário logado.
 
-#### **Correções:**
-- Corrigir os links dos botões de **login** e **Esqueci minha senha**, que atualmente estão redirecionando para páginas incorretas usadas em testes.
-- Revisar a **responsividade** da interface, pois alguns menus e botões estão sendo exibidos em tamanhos maiores em determinadas resoluções.
+
+**Data: 2024-11-01**
+- **Recuperação de Senha ("Esqueci minha senha")**: Criado o recurso de recuperação de senha. Ao clicar, um popup solicita o email. Se o email constar no sistema, a senha é exibida para o usuário.
+
+**Códigos Alterados neste Commit:**
+- **jquery.main.js**: Ajustes nas funcionalidades de login, registro e fluxo de navegação.
+- **scriptmodal.js**: Modificação no comportamento do botão de fechar, agora redirecionando o usuário para a área do cliente logado.
+- **script1.js**: Implementação para exibir todos os aluguéis na área logada (atualmente mostrando aluguéis de todos os usuários, pendente refinamento).
+- **encomendar.html**: Ajustes no layout e integração com o fluxo de login/registro.
+- **login.html**: Implementação do sistema de login com validação de credenciais e redirecionamento para a área do cliente.
+- **register.html**: Configuração do processo de cadastro, incluindo a gravação dos dados do usuário no Local Storage em formato JSON.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Data: 20241101
+Relator: Danilo Herculano
+
+**Melhorias Pendentes:**
+- **Correção do Rodapé**: Ajustar a cor do rodapé para usuários logados, alterando-a para vermelho conforme o padrão desejado.
+- **Controle de Estoque**: Implementar a funcionalidade para decrementar a quantidade de itens no estoque após cada pedido realizado.
+- **Formulário de Dúvidas**: Revisar e corrigir o formulário de dúvidas, garantindo que todos os campos estão funcionais e com layout consistente.
+- **Histórico de Pedidos**: Corrigir a exibição do histórico de pedidos para que seja exclusivo de cada usuário, evitando o compartilhamento de dados entre contas.
