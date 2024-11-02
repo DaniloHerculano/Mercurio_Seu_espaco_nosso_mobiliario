@@ -1,60 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<title>Services</title>
-		<meta charset="utf-8">
-		<meta name = "format-detection" content = "telephone=no" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="icon" href="images/favicon.ico">
-		<link rel="shortcut icon" href="images/favicon.ico" />
-		<link rel="stylesheet" href="css/style.css">
-		<script src="js/jquery.js"></script>
-		<script src="js/jquery.ui.totop.js"></script>
-		<script>
-			$(document).ready(function(){
-				$().UItoTop({ easingType: 'easeOutQuart' });
-			});
-		</script>
-	</head>
-	<body class="" id="top">
-		<div class="main">
-<!--==============================Cabeçalho=================================-->
-<header>
-    <div class="menu_block ">
-        <div class="container_12">
-            <div class="grid_12">
-                <nav class="horizontal-nav full-width horizontalNav-notprocessed">
-                    <ul class="sf-menu">
-                        <li><a href="index.html">Início</a></li>
-                        <li><a href="index-1.html">Sobre</a></li>
-                        <li class="current"><a href="login.html">Área do Cliente</a></li>
-                        <li><a href="index-2.html">Produtos</a></li>
-                        <li><a href="index-3.html">Serviços</a></li>
-                        <li><a href="index-4.html">Contatos</a></li>
-                    </ul>
-                </nav>
+<head>
+    <title>Área do Cliente</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.ui.totop.js"></script>
+    <script>
+        $(document).ready(function(){
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+</head>
+<body id="top">
+    <div class="main">
+        <!--==============================cabeçalho=================================-->
+        <header>
+            <div class="menu_block ">
+                <div class="container_12">
+                    <div class="grid_12">
+                        <nav class="horizontal-nav full-width horizontalNav-notprocessed">
+                            <ul class="sf-menu">
+                                <li><a href="index.html">Início</a></li>
+                                <li><a href="index-1.html">Sobre</a></li>
+                                <li class="current"><a href="login.html">Área do Cliente</a></li>
+                                <li><a href="index-2.html">Produtos</a></li>
+                                <li><a href="index-3.html">Serviços</a></li>
+                                <li><a href="index-4.html">Contatos</a></li>
+                            </ul>
+                        </nav>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="container_12">
+                <div class="grid_12">
+                    <h1>
+                        <p style="font-size:70px" font face="Serif"><span class="color1"></span>MERCÚRIO</span></strong></p>
+                        <p style="font-size:70px" font face="Serif"><span class="fakedivision">_</span></span></strong></p>
+                        <p style="font-size:50px" font face="Serif"><span class="color0">Seu Espaço, Nosso Mobiliário</span></strong></p>
+                    </h1>
+                </div>
+            </div>
             <div class="clear"></div>
-        </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-    <div class="container_12">
-        <div class="grid_12">
-            <h1>
-                <p style="font-size:70px" font face="Serif"><span class="color1"></span>MERCÚRIO</span></strong></p>
-                <p style="font-size:70px" font face="Serif"><span class="fakedivision">_</span></span></strong></p>
-                <p style="font-size:50px" font face="Serif"><span class="color0">Seu Espaço, Nosso Mobiliário</span></strong></p>
-            </h1>
-        </div>
-    </div>
-    <div class="clear"></div>
-</header>
-<!--==============================Conteúdo (Login)=================================-->
-<header>
-        <div class="content"><div class="ic">Mercurio</div>
+        </header>
+        <!--==============================Conteúdo (Login)=================================-->
+        <div class="content">
             <div class="form-bubble">
                 <h2>Login</h2>
-                <form action="#">
+                <form id="loginForm">
                     <div class="form-group">
                         <label for="email">E-mail</label>
                         <input type="email" id="email" placeholder="Digite seu e-mail" required>
@@ -66,14 +65,69 @@
                     <button type="submit" class="btn">Entrar</button>
                 </form>
                 <div class="extra-options">
-                    <a href="senha.html">Esqueci minha senha</a>
+                    <a href="#" id="forgot-password">Esqueci minha senha</a>
                     <a href="register.html">Registrar-se</a>
                 </div>
-            </div>
-        </div></div>
-    <div class="clear"></div>
-</header>  
-<!--==============================rodapé=================================-->
+            </div></div>
+        </div>
+
+         <!--======================== Modal para Recuperação de Senha =========================-->
+        <div id="password-recovery-modal" style="display: none; padding: 20px; border: 1px solid #ddd; background-color: #f9f9f9; position: absolute; top: 20%; left: 50%; transform: translate(-50%, -20%); width: 300px;">
+            <h3>Recuperação de Senha</h3>
+            <p>Digite o e-mail cadastrado:</p>
+            <input type="email" id="recovery-email" placeholder="Digite seu e-mail" required>
+            <button id="recover-password" class="btn">Recuperar Senha</button>
+            <p id="recovery-message" style="margin-top: 10px;"></p>
+            <button id="close-modal" class="btn">Fechar</button>
+        </div>
+
+        <!--======================== Script de Login e Recuperação de Senha =========================-->
+        <script>
+            $(document).ready(function() {
+                // Função de Login
+                $('#loginForm').submit(function(event) {
+                    event.preventDefault();
+            
+                    const email = $('#email').val();
+                    const password = $('#password').val();
+                    const userData = JSON.parse(localStorage.getItem(email));
+
+                    if (userData && userData.email === email && userData.password === password) {
+                        alert('Login bem-sucedido!');
+                        window.location.href = "customer_area.html";
+                    } else {
+                        alert('E-mail ou senha incorretos. Por favor, tente novamente ou cadastre-se.');
+                    }
+                });
+
+                // Exibir Modal de Recuperação de Senha
+                $('#forgot-password').click(function(e) {
+                    e.preventDefault();
+                    $('#password-recovery-modal').show();
+                });
+
+                // Função de Recuperação de Senha
+                $('#recover-password').click(function() {
+                    const recoveryEmail = $('#recovery-email').val();
+                    const userData = JSON.parse(localStorage.getItem(recoveryEmail));
+
+                    if (userData && userData.password) {
+                        $('#recovery-message').text(`Sua senha é: ${userData.password}`);
+                    } else {
+                        $('#recovery-message').text("E-mail não encontrado. Verifique e tente novamente.");
+                    }
+                });
+
+                // Fechar o Modal
+                $('#close-modal').click(function() {
+                    $('#password-recovery-modal').hide();
+                    $('#recovery-message').text('');
+                    $('#recovery-email').val('');
+                });
+            });
+        </script>
+
+        <!--==============================rodapé=================================-->
         <footer>
             <div class="container_12">
                 <div class="grid_12">
@@ -86,12 +140,12 @@
                     <div class="copy">
                         <div class="st1">
                             <div class="brand">MERCÚRIO </div>
-                        &copy; 2024	| <a href="#">Política de Privacidade</a> 
-                    </div> <a href="group-members.html">Site desenvolvido por DRP04-PJI240-SALA-005GRUPO-006 - PROJETO INTEGRADOR II - UNIVESP</a>
+                        &copy; 2024 | <a href="#">Política de Privacidade</a> 
+                        </div> <a href="group-members.html">Site desenvolvido por DRP04-PJI240-SALA-005GRUPO-006 - PROJETO INTEGRADOR II - UNIVESP</a>
                     </div>
                 </div>
-                <div class="clear"></div>
             </div>
         </footer>   
-    </body>
+    </div>
+</body>
 </html>
