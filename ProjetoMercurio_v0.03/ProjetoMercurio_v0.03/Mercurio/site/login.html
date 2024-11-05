@@ -49,6 +49,7 @@
             </div>
             <div class="clear"></div>
         </header>
+        
         <!--==============================Conteúdo (Login)=================================-->
         <div class="content">
             <div class="form-bubble">
@@ -67,11 +68,11 @@
                 <div class="extra-options">
                     <a href="#" id="forgot-password">Esqueci minha senha</a>
                     <a href="register.html">Registrar-se</a>
-                </div>
-            </div></div>
+                </div></div>
+            </div>
         </div>
 
-         <!--======================== Modal para Recuperação de Senha =========================-->
+        <!--======================== Modal para Recuperação de Senha =========================-->
         <div id="password-recovery-modal" style="display: none; padding: 20px; border: 1px solid #ddd; background-color: #f9f9f9; position: absolute; top: 20%; left: 50%; transform: translate(-50%, -20%); width: 300px;">
             <h3>Recuperação de Senha</h3>
             <p>Digite o e-mail cadastrado:</p>
@@ -93,8 +94,11 @@
                     const userData = JSON.parse(localStorage.getItem(email));
 
                     if (userData && userData.email === email && userData.password === password) {
+                        // Armazena o e-mail do usuário logado no Local Storage
+                        localStorage.setItem('loggedInUser', email);
+
                         alert('Login bem-sucedido!');
-                        window.location.href = "customer_area.html";
+                        window.location.href = "customer_area.html"; // Redireciona para a área do cliente
                     } else {
                         alert('E-mail ou senha incorretos. Por favor, tente novamente ou cadastre-se.');
                     }
