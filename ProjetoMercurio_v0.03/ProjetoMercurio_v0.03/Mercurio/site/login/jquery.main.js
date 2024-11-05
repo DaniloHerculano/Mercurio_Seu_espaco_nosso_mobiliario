@@ -1,5 +1,3 @@
-// jquery.main.js
-
 $(function() {
     // valores de campo originais
     var field_values = {
@@ -120,6 +118,10 @@ $(function() {
     
         // Salva `userData` no Local Storage
         localStorage.setItem(userData.email, JSON.stringify(userData));
+
+        // Define o usuário recém-cadastrado como o usuário logado
+        localStorage.setItem('loggedInUser', userData.email);
+
         alert('Cadastro realizado com sucesso!');
         window.location.href = "login.html"; // Redireciona para a página de login
     });
