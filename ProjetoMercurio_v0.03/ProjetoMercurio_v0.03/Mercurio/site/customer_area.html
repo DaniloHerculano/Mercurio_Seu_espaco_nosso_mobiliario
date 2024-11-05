@@ -98,7 +98,7 @@
 
                     <!-- Link de Sair como Botão -->
                     <div style="text-align: center; margin-top: 20px;">
-                        <a href="login.html" class="btn-exit">
+                        <a href="#" id="logout" class="btn-exit">
                             Sair
                         </a>
                     </div>
@@ -114,20 +114,27 @@
     
         <script>
             document.addEventListener("DOMContentLoaded", function() {
-                // Exibir informações do usuário
-                const userData = JSON.parse(localStorage.getItem('userData'));
-                if (userData) {
-                    const userInfoDiv = document.getElementById('userInfo');
-                    userInfoDiv.innerHTML = `
-                        <p><strong>Nome:</strong> ${userData.firstname} ${userData.lastname}</p>
-                        <p><strong>Nome de Usuário:</strong> ${userData.username}</p>
-                        <p><strong>Email:</strong> ${userData.email}</p>
-                        <p><strong>Faixa Etária:</strong> ${userData.age}</p>
-                        <p><strong>Gênero:</strong> ${userData.gender}</p>
-                        <p><strong>Cidade:</strong> ${userData.country}</p>
-                    `;
+                // Recupera o email do usuário logado
+                const loggedInUserEmail = localStorage.getItem('loggedInUser');
+                if (loggedInUserEmail) {
+                    const userData = JSON.parse(localStorage.getItem(loggedInUserEmail));
+                    
+                    if (userData) {
+                        const userInfoDiv = document.getElementById('userInfo');
+                        userInfoDiv.innerHTML = `
+                            <p><strong>Nome:</strong> ${userData.firstname} ${userData.lastname}</p>
+                            <p><strong>Nome de Usuário:</strong> ${userData.username}</p>
+                            <p><strong>Email:</strong> ${userData.email}</p>
+                            <p><strong>Faixa Etária:</strong> ${userData.age}</p>
+                            <p><strong>Gênero:</strong> ${userData.gender}</p>
+                            <p><strong>Cidade:</strong> ${userData.country}</p>
+                        `;
+                    } else {
+                        alert('Usuário não encontrado. Por favor, faça login.');
+                        window.location.href = "login.html";
+                    }
                 } else {
-                    alert('Usuário não encontrado. Por favor, faça login.');
+                    alert('Nenhum usuário logado. Por favor, faça login.');
                     window.location.href = "login.html";
                 }
 
@@ -153,6 +160,13 @@
                 } else {
                     pedidosContainer.innerHTML = "<p>Você ainda não realizou nenhum pedido.</p>";
                 }
+
+                // Função de Logout
+                document.getElementById('logout').addEventListener('click', function(event) {
+                    event.preventDefault();
+                    localStorage.removeItem('loggedInUser');
+                    window.location.href = "login.html";
+                });
             });
         </script>
         
