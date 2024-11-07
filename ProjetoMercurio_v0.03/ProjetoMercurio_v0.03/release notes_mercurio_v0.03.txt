@@ -45,11 +45,20 @@ Relator: Danilo Herculano
 - **customer_area.html**: Criada a área do cliente, onde o usuário agora pode visualizar seu histórico de aluguéis, prosseguir para alugar novos itens e realizar logout de forma simplificada.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Data: 20241101
+
+Data: 20241107
 Relator: Danilo Herculano
 
+**Novas Funcionalidades e Ajustes:**
+- Cálculo automático do valor total com base no número de dias multiplicado pelo valor diário.
+- Exibição do valor diário individual.
+- Cálculo e exibição do valor total sem frete (considerando apenas a quantidade de dias).
+- Cálculo e exibição do valor total com frete (incluindo o valor de frete ao total calculado por dias).
+- Formatação dos valores exibidos, apresentando sempre com ",00" para maior clareza (exemplo: exibir "5,00" em vez de "5").
+- Atualização do Resumo do Aluguel, com envio de novas informações para a área "Meus Pedidos Realizados".
+- Controle de Estoque: Implementação a funcionalidade para decrementar a quantidade de itens no estoque após cada pedido realizado.
+
 **Melhorias Pendentes:**
-- **Correção do Rodapé**: Ajustar a cor do rodapé para usuários logados, alterando-a para vermelho conforme o padrão desejado.
-- **Controle de Estoque**: Implementar a funcionalidade para decrementar a quantidade de itens no estoque após cada pedido realizado.
-- **Formulário de Dúvidas**: Revisar e corrigir o formulário de dúvidas, garantindo que todos os campos estão funcionais e com layout consistente.
-- **Histórico de Pedidos**: Corrigir a exibição do histórico de pedidos para que seja exclusivo de cada usuário, evitando o compartilhamento de dados entre contas.
+- Correção do Rodapé: Ajustar a cor do rodapé para usuários logados, alterando-a para vermelho conforme o padrão desejado.
+- Formulário de Dúvidas: Revisar e corrigir o formulário de dúvidas, garantindo que todos os campos estão funcionais e com layout consistente.
+- Histórico de Pedidos: Corrigir a exibição do histórico de pedidos para que seja exclusivo de cada usuário, evitando o compartilhamento de dados entre contas.
