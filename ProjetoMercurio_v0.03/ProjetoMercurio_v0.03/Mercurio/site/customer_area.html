@@ -16,7 +16,6 @@
         });
     </script>
     <style>
-        /* Estilo do link Sair como botão */
         .btn-exit {
             display: inline-block;
             padding: 10px 20px;
@@ -27,19 +26,15 @@
             font-weight: bold;
             text-align: center;
         }
-
         .btn-exit:hover {
             background-color: #e21b1b;
         }
-
-        /* Estilo dos pedidos */
         .pedido-item {
             border: 1px solid #ddd;
             padding: 15px;
             margin: 10px 0;
             border-radius: 5px;
         }
-
         .pedido-item h4 {
             margin-top: 0;
         }
@@ -47,9 +42,9 @@
 </head>
 <body class="" id="top">
     <div class="main">
-        <!--==============================cabeçalho=================================-->
+<!--==============================cabeçalho=================================-->
         <header>
-            <div class="menu_block ">
+            <div class="menu_block">
                 <div class="container_12">
                     <div class="grid_12">
                         <nav class="horizontal-nav full-width horizontalNav-notprocessed">
@@ -70,37 +65,34 @@
             <div class="container_12">
                 <div class="grid_12">
                     <h1>
-                        <p style="font-size:70px" font face="Serif"><span class="color1"></span>MERCÚRIO</span></strong></p>
-                        <p style="font-size:70px" font face="Serif"><span class="fakedivision">_</span></span></strong></p>
-                        <p style="font-size:50px" font face="Serif"><span class="color0">Seu Espaço, Nosso Mobiliário</span></strong></p>
+                        <p style="font-size:70px"><span class="color1">MERCÚRIO</span></p>
+                        <p style="font-size:50px"><span class="color0">Seu Espaço, Nosso Mobiliário</span></p>
                     </h1>
                 </div>
             </div>
             <div class="clear"></div>
         </header>
         
-        <!--==============================Conteúdo (Usuário logado)=================================-->
         <div class="content">
-            <div class="ic"></div>
             <div class="container_12">
                 <div class="grid_6">
                     <h3>Bem-vindo(a) à Área do Cliente</h3>
-                    <div id="userInfo">
-                        <!-- Informações do usuário serão exibidas aqui -->
-                    </div>
+                    <div id="userInfo"></div>
                     
-                    <!-- Botão para Encomenda -->
                     <div style="text-align: center; margin-top: 20px;">
                         <a href="encomendar.html" class="btn" style="padding: 10px 20px; background-color: #1b6222; color: #fff; text-decoration: none; border-radius: 5px;">
                             Fazer Locação
                         </a>
                     </div>
 
-                    <!-- Link de Sair como Botão -->
                     <div style="text-align: center; margin-top: 20px;">
-                        <a href="#" id="logout" class="btn-exit">
-                            Sair
-                        </a>
+                        <a href="#" id="logout" class="btn-exit">Sair</a>
+                    </div>
+
+                    <!-- Seção para Estoque Atual -->
+                    <div style="margin-top: 30px;">
+                        <h3>Estoque Atual</h3>
+                        <div id="estoqueAtual"></div>
                     </div>
 
                     <!-- Seção para Pedidos Realizados -->
@@ -114,7 +106,6 @@
     
         <script>
             document.addEventListener("DOMContentLoaded", function() {
-                // Recupera o email do usuário logado
                 const loggedInUserEmail = localStorage.getItem('loggedInUser');
                 if (loggedInUserEmail) {
                     const userData = JSON.parse(localStorage.getItem(loggedInUserEmail));
@@ -138,6 +129,15 @@
                     window.location.href = "login.html";
                 }
 
+                // Exibir estoque
+                const estoqueAtual = JSON.parse(localStorage.getItem('estoque')) || { mesas: 500, cadeiras: 500, bancos: 500 };
+                const estoqueContainer = document.getElementById('estoqueAtual');
+                estoqueContainer.innerHTML = `
+                    <p><strong>Mesas disponíveis:</strong> ${estoqueAtual.mesas}</p>
+                    <p><strong>Cadeiras disponíveis:</strong> ${estoqueAtual.cadeiras}</p>
+                    <p><strong>Bancos disponíveis:</strong> ${estoqueAtual.bancos}</p>
+                `;
+
                 // Exibir pedidos realizados
                 const pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
                 const pedidosContainer = document.getElementById('meusPedidos');
@@ -147,13 +147,18 @@
                         pedidosContainer.innerHTML += `
                             <div class="pedido-item">
                                 <h4>Pedido ${index + 1}</h4>
-                                <p><strong>Data de Entrega:</strong> ${pedido.data}</p>
+                                <p><strong>Data de Retirada:</strong> ${pedido.dataInicio || 'Não especificada'}</p>
+                                <p><strong>Data de Devolução:</strong> ${pedido.dataRetorno || 'Não especificada'}</p>
+                                <p><strong>Quantidade de Dias:</strong> ${pedido.dias || 'Não especificada'}</p>
                                 <p><strong>Endereço de Entrega:</strong> ${pedido.endereco}</p>
                                 <p><strong>Quantidade de Mesas:</strong> ${pedido.mesas}</p>
                                 <p><strong>Quantidade de Cadeiras:</strong> ${pedido.cadeiras}</p>
                                 <p><strong>Quantidade de Bancos:</strong> ${pedido.bancos}</p>
-                                <p><strong>Frete:</strong> R$${pedido.frete}</p>
-                                <p><strong>Total:</strong> R$${pedido.total}</p>
+                                <p><strong>Valor Diário dos Produtos:</strong> R$${parseFloat(pedido.totalDiario).toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+                                <p><strong>Valor Total dos Produtos (sem frete):</strong> R$${parseFloat(pedido.totalSemFrete).toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+                                <p><strong>Frete:</strong> R$${parseFloat(pedido.frete).toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+                                <p><strong>Total a Pagar:</strong> R$${parseFloat(pedido.total).toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+                                <button onclick="devolverEstoque(${index})" class="btn2">Devolver Estoque</button>
                             </div>
                         `;
                     });
@@ -168,9 +173,29 @@
                     window.location.href = "login.html";
                 });
             });
-        </script>
-        
-        <!--==============================rodapé=================================-->
+
+            // Função para devolver o estoque
+            function devolverEstoque(index) {
+                let pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+                const estoqueAtual = JSON.parse(localStorage.getItem('estoque')) || { mesas: 500, cadeiras: 500, bancos: 500 };
+
+                const pedido = pedidos[index];
+                if (pedido) {
+                    estoqueAtual.mesas += pedido.mesas;
+                    estoqueAtual.cadeiras += pedido.cadeiras;
+                    estoqueAtual.bancos += pedido.bancos;
+                    
+                    // Atualiza o estoque no Local Storage
+                    localStorage.setItem('estoque', JSON.stringify(estoqueAtual));
+
+                    // Remove o pedido do histórico
+                    pedidos.splice(index, 1);
+                    localStorage.setItem('pedidos', JSON.stringify(pedidos));
+                    location.reload(); // Recarrega a página para atualizar as informações
+                }
+            }
+        </script>                               
+<!--==============================rodapé=================================-->        
         <footer>
             <div class="container_12">
                 <div class="grid_12">
