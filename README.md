@@ -1,34 +1,23 @@
-Data: 20240905
-Versão: Mercurio 0.03
-Relator: Danilo Herculano
+Projeto: Mercúrio - Seu Espaço, Nosso Mobiliário
 
-### **Entregas na Versão:**
-- **Desenvolvimento**: Utilização das linguagens HTML, CSS e JavaScript para criação de interfaces web dinâmicas e responsivas.
-- **Telas Criadas**: Foram desenvolvidas as páginas **Início**, **Sobre**, **Registrar**, **Produtos**, **Serviços** e **Contatos**. As informações sobre o projeto e os integrantes do grupo estão no rodapé do site, acessíveis através do link "Site desenvolvido por...".
-  - **Início**: Apresenta uma breve descrição dos serviços oferecidos pela plataforma.
-  - **Sobre**: Explica brevemente a ideia e o objetivo da plataforma.
-  - **Registrar**: Tela dedicada ao registro de novos usuários ou clientes.
-  - **Produtos**: As categorias de produtos são **Conforme**, **Médio** e **Executivo**. Os itens disponíveis para aluguel incluem banqueta, cadeira e mesa.
-  - **Serviços**: Descrição dos tipos de serviços prestados, como aluguel, retirada, entrega e personalização.
-  - **Contatos**: Formulário de contato e mapa com a localização fictícia baseada na Univesp Vinhedo.
-- **Imagens**: Inseridas para melhorar a visualização e estética do site.
-- **Registro de Usuário**: Processo de registro de novos usuários iniciado.
+# Resumo
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Este projeto é uma evolução do anterior (Mercúrio: Controle e Fluxo de Estoque), desenvolvido para aprimorar o processo de locação de móveis para uma empresa de aluguel de mobiliário. Após um levantamento de novas necessidades, foi decidido criar uma plataforma web intuitiva que permite ao cliente cadastrar-se, fazer reservas e verificar a disponibilidade dos produtos de forma autônoma, sem a necessidade de interação constante com os funcionários.
 
-### **Pendências:**
+A plataforma utiliza HTML, CSS, Javascript, e integra-se com APIs para uma experiência fluida e eficiente. A interface foi projetada com foco na acessibilidade e na experiência do usuário final, permitindo fácil navegação e segurança durante o processo de reserva e pagamento. 
 
-#### **Desenvolvimento:**
-- Alterar cores da página, se necessário
-- Implementar a funcionalidade de login.
-- Desenvolver a funcionalidade "Esqueci minha senha".
-- Criar a tela de perfil do usuário logado.
-- Desenvolver a tela para seleção de produtos.
-- Implementar a tela do carrinho de compras.
-- Criar a tela de pagamento.
-- Implementar mensagem de erro quando mensagem em Contatos não é preenchida de forma adequada
-- Implementar botão de retorno ao início da página no final da página
+# Objetivos
 
-#### **Correções:**
-- Corrigir os links dos botões de **login** e **Esqueci minha senha**, que atualmente estão redirecionando para páginas incorretas usadas em testes.
-- Revisar a **responsividade** da interface, pois alguns menus e botões estão sendo exibidos em tamanhos maiores em determinadas resoluções.
+- Facilitar o processo de reserva para os clientes, oferecendo mais autonomia.
+- Melhorar o gerenciamento de estoque e organização de pedidos para os administradores.
+- Criar um site responsivo e acessível que permite cadastro, reservas, e visualização de disponibilidade de produtos.
+
+# Tecnologias
+
+- **Frontend**: HTML, CSS, Javascript
+- **Integrações**: APIs para conexão entre componentes
+- **Testes**: Casos de teste para garantir funcionalidade e experiência do usuário
+
+# Justificativa
+
+O projeto surgiu a partir de uma necessidade identificada em entrevista com o proprietário, onde a alta demanda de pedidos via WhatsApp estava dificultando a organização e gerando atrasos. A solução propõe otimizar o processo de reservas, facilitando a navegação dos clientes e a gestão dos pedidos pela empresa.
