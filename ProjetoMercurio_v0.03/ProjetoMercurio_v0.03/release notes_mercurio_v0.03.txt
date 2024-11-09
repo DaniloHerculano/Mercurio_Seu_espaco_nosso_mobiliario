@@ -58,7 +58,23 @@ Relator: Danilo Herculano
 - Atualização do Resumo do Aluguel, com envio de novas informações para a área "Meus Pedidos Realizados".
 - Controle de Estoque: Implementação a funcionalidade para decrementar a quantidade de itens no estoque após cada pedido realizado.
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Data: 20241109
+Relator: Danilo Herculano
+
+**Novas Funcionalidades e Ajustes:**
+Limpeza de Informações e Validação de Dados
+ - Implementação de funcionalidade para limpar os campos preenchidos.
+ - Validação dos dados preenchidos para assegurar a integridade das informações.
+Arquivos Modificados
+ - index-4.html: Adicionado código para integrar a nova lógica de validação e limpeza do formulário.
+ - TMForm.js: Novo arquivo com as funções de validação de dados e limpeza de campos.
+ - style_form.css: Novo arquivo de estilo dedicado ao formulário, melhorando a organização e aparência visual.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 **Melhorias Pendentes:**
 - Correção do Rodapé: Ajustar a cor do rodapé para usuários logados, alterando-a para vermelho conforme o padrão desejado.
-- Formulário de Dúvidas: Revisar e corrigir o formulário de dúvidas, garantindo que todos os campos estão funcionais e com layout consistente.
+- Formulário de Dúvidas: Pendente funcionar o botão ENVIAR
 - Histórico de Pedidos: Corrigir a exibição do histórico de pedidos para que seja exclusivo de cada usuário, evitando o compartilhamento de dados entre contas.
