@@ -14,6 +14,23 @@ Relator: Danilo Herculano
 - **Registro de Usuário**: Processo de registro de novos usuários iniciado.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Data: 20240926 
+Relator: Cristina Miss de Jesus 
+
+Entregas na Versão: 
+- Desenvolvimento do layout login.html (links para Login, esqueci minha senha e registrar-se 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Data: 20240926 
+Relator: Nicoli Rotella Sartori
+
+Entregas na Versão: 
+- Desenvolvimento do layout encomendar.html (calculo do frete, QR code para pagamento, calendário inicio locação, calculo total, etc). 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Data: 20241101
 Relator: Danilo Herculano
 
