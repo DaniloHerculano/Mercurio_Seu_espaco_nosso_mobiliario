@@ -1,5 +1,5 @@
 Data: 20240905
-Relator: Danilo Herculano
+Relator: Danilo Valentim Herculano
 
 ### **Entregas na Versão:**
 - **Desenvolvimento**: Utilização das linguagens HTML, CSS e JavaScript para criação de interfaces web dinâmicas e responsivas.
@@ -32,7 +32,7 @@ Entregas na Versão:
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Data: 20241101
-Relator: Danilo Herculano
+Relator: Danilo Valentim Herculano
 
 **Data: 2024-10-30**
 - **Login**: Implementado o sistema de login do usuário após o registro, com mensagens de erro para casos em que o usuário não existe ou a senha está incorreta.
@@ -64,7 +64,7 @@ Relator: Danilo Herculano
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Data: 20241107
-Relator: Danilo Herculano
+Relator: Danilo Valentim Herculano
 
 **Novas Funcionalidades e Ajustes:**
 - Cálculo automático do valor total com base no número de dias multiplicado pelo valor diário.
@@ -78,7 +78,7 @@ Relator: Danilo Herculano
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Data: 20241109
-Relator: Danilo Herculano
+Relator: Danilo Valentim Herculano
 
 **Novas Funcionalidades e Ajustes:**
 Limpeza de Informações e Validação de Dados
@@ -90,6 +90,8 @@ Arquivos Modificados
  - style_form.css: Novo arquivo de estilo dedicado ao formulário, melhorando a organização e aparência visual.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Data: 20241109
+Relator: Danilo Valentim Herculano
 
 **Melhorias Pendentes:**
 - Correção do Rodapé: Ajustar a cor do rodapé para usuários logados, alterando-a para vermelho conforme o padrão desejado.
