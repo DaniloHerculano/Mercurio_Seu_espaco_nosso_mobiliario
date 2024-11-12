@@ -99,10 +99,12 @@ Arquivos Modificados
  - style_form.css: Novo arquivo de estilo dedicado ao formulário, melhorando a organização e aparência visual.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Data: 20241109
+Data: 20241112
 Relator: Danilo Valentim Herculano
 
 Melhorias Pendentes:
 - Correção do Rodapé: Ajustar a cor do rodapé para usuários logados, alterando-a para vermelho conforme o padrão desejado.
-- Formulário de Dúvidas: Pendente funcionar o botão ENVIAR
+- Formulário de Dúvidas: Pendente funcionar o botão ENVIAR.
 - Histórico de Pedidos: Corrigir a exibição do histórico de pedidos para que seja exclusivo de cada usuário, evitando o compartilhamento de dados entre contas.
+- Permitir que o usuário logado navegue pelo site sem a necessidade de fazer login novamente.
+- Criar um usuário administrador com permissão para cadastrar e atualizar valores dos produtos e quantidades no estoque.
