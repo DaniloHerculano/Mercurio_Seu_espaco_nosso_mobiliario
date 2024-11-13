@@ -45,7 +45,7 @@ Entregas da Versão:
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Data: 20241031
-Relator: Danilo Valentim Hercula
+Relator: Danilo Valentim Herculano
 
 Entregas da Versão:
 - Botão de Logout: Adicionado botão de logout na área do usuário logado.
@@ -56,7 +56,7 @@ Entregas da Versão:
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Data: 20241101
-Relator: Danilo Valentim Hercula
+Relator: Danilo Valentim Herculano
 
 Entregas da Versão:
 - Recuperação de Senha ("Esqueci minha senha"): Criado o recurso de recuperação de senha. Ao clicar, um popup solicita o email. Se o email constar no sistema, a senha é exibida para o usuário.
